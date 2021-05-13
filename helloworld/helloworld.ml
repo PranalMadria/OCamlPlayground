@@ -24,9 +24,37 @@ let rec range a b =
   if a > b then [] 
   else a + 5 :: range (a + 1) b;;
 
-let digits = print_int (range 0 9);;
 
 
+let rec factorial n = 
+  match n with
+  | 0 | 1 -> 1 
+  | _ -> n * factorial (n-1);;
+  print_endline " ";;
+  let wz = print_int(factorial 5)
 
-    
+let rec factorialfn = function
+  | 0 | 1 -> 1
+  | n -> n * factorialfn (n-1);;
+
+
+(**  Lists *)
+
+(**  Add one element to front of list with :: *)
+
+  1 :: [2; 3];;
+
+(**  concat two lists with @ *)
+
+[1] @ [2; 3];;
+
+let rec total l = 
+  match l with 
+  | [] -> 0
+  | h :: t -> h + total t;;
+
+  let rec length l = 
+    match l with
+    | [] -> 0
+    | _ :: t -> 1 + length t
 
